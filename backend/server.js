@@ -8,7 +8,10 @@ import User from "./models/User.js";
 dotenv.config();
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin:"https://deploy-1-kyps.onrender.com",
+     credentials: true, 
+}));
 
 console.log("Loaded MONGO_URL:", process.env.MONGO_URL);
 console.log("Loaded JWT_TOKEN:", process.env.JWT_TOKEN);
