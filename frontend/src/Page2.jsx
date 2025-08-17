@@ -15,7 +15,7 @@ function Page2() {
                 return;
             }
             try {
-                const res = await axios.get("http://localhost:5000/auth", {
+                const res = await axios.get("https://deploy-znae.onrender.com/auth", {
                     headers: { Authorization: `Bearer ${token}` },
                 });
                 if (!res.data.valid) navigate("/");
@@ -28,7 +28,7 @@ function Page2() {
 
     const handleSearch = async () => {
         try {
-            const res = await axios.get(`http://localhost:5000/find/${searchId}`);
+            const res = await axios.get(`https://deploy-znae.onrender.com/find/${searchId}`);
             if (res.data.name) setResult(`User Found: ${res.data.name}`);
             else setResult("No user found");
         } catch {
